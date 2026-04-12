@@ -1,0 +1,4 @@
+Pillow==12.2.0
+numpy==2.4.4
+requests==2.33.1
+opencv-python==4.13.0.92

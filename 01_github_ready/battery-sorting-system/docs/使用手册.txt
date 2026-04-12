@@ -1,0 +1,63 @@
+﻿📘 锂电池智能检测系统部署手册 (v1.0)
+1. 系统架构清单
+本系统采用云-边架构：
+
+云端 (Alibaba Cloud)：负责全国/全厂数据的汇聚、Web 可视化大屏监控及人员管理。
+
+边缘端 (Raspberry Pi)：负责生产线实时控制、AI 缺陷检测及次品自动剔除。
+
+2. 云端部署（Server 端）
+适用环境：阿里云/腾讯云（Ubuntu/CentOS），需安装宝塔面板。
+
+数据库准备：
+
+在宝塔创建一个名为 battery_sys 的 MySQL 数据库。
+
+设置 root 密码为 3（或手动修改 server.py 中的 DB_CONFIG）。
+
+代码上传：
+
+将 server.py 上传至 /www/wwwroot/ 目录。
+
+安装 Supervisor 守护进程：
+
+在宝塔软件商店安装 ** Supervisor 进程管理器**。
+
+添加新进程：启动命令设置为 /你的虚拟环境路径/python3 server.py。
+
+开放端口：
+
+在阿里云控制台安全组和宝塔防火墙中同时放行 5000 端口。
+
+数据初始化 (可选)：
+
+运行 Demo_Data_Tool.py 可瞬间生成一整年的模拟生产数据。
+
+运行 Database_Query_Optimizer.py 为数据库添加时间索引提高查询速度。
+
+3. 终端部署（Raspberry Pi 端）
+适用环境：树莓派 4B/5，已连接摄像头及驱动电路。
+
+硬件接线参考：
+
+红外传感器：信号线接物理引脚 37 (BOARD 模式)。
+
+传送带电机：PUL-18, DIR-15, EN-16。
+
+分拣推杆：PUL-31, DIR-33, EN-29。
+
+配置云端地址：
+
+打开 final.py，将 SERVER_IP 修改为你的云服务器公网 IP。
+
+运行程序：
+
+确保 ai_detector.py、stepper_driver.py / sorter_motor.py / ir_sensor.py 以及 best.pt 模型文件与 final.py 处于同一文件夹。
+
+执行命令：python3 final.py。
+
+操作说明：
+
+使用默认账号 admin 密码 123 登录 HMI 界面。
+
+点击“启动生产线”即可开始自动检测

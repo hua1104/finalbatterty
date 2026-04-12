@@ -1,0 +1,14 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+logs/
+PHOTO/
+received_images/
+localhost.sql
+server_config.json
+Thumbs.db
+.DS_Store

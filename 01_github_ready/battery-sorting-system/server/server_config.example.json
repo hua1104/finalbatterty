@@ -1,0 +1,16 @@
+{
+  "app_secret_key": "replace_with_strong_secret",
+  "session_cookie_secure": false,
+  "dash_cache_ttl": 20,
+  "login_rate_window": 60,
+  "login_rate_max": 10,
+  "login_lock_max_fails": 5,
+  "login_lock_window": 600,
+  "login_lock_duration": 300,
+  "admin_only_delete": false,
+  "db_host": "localhost",
+  "db_user": "root",
+  "db_password": "your_db_password",
+  "db_name": "battery_sys",
+  "upload_folder": "/www/wwwroot/received_images"
+}

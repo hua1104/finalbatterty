@@ -1,0 +1,16 @@
+{
+  "server_ip": "YOUR_SERVER_IP",
+  "server_port": 5000,
+  "save_folder": "/home/pi/conveyor_photos",
+  "step_delay": 0.0006,
+  "batch_steps": 50,
+  "model_path": "best.pt",
+  "camera_index": 0,
+  "camera_width": 1280,
+  "camera_height": 720,
+  "camera_reopen_interval": 3,
+  "upload_retry_interval": 30,
+  "upload_max_retry": 3,
+  "pending_file": "pending_uploads.jsonl",
+  "log_dir": "logs"
+}

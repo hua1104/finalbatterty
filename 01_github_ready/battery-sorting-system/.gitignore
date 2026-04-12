@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+logs/
+client/logs/
+server/logs/
+client/config.json
+client/pending_uploads.jsonl
+server/server_config.json
+Thumbs.db
+.DS_Store

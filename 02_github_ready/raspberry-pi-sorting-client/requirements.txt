@@ -1,0 +1,5 @@
+Pillow>=9.5
+requests>=2.31
+opencv-python>=4.8
+numpy>=1.23
+ultralytics>=8.0

@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+logs/
+pending_uploads.jsonl
+~$*.docx
+Thumbs.db
+.DS_Store
